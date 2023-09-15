@@ -1,9 +1,40 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement("h1", { id: "heading" }, "This is Namaste React! 🚀");
-const parent = React.createElement("div", { id: "parent" }, [React.createElement("div", { id: "child" }, [React.createElement("h1", {}, "This is Namaste React! 🚀"), React.createElement("h2", {}, "Learning from Akshay Saini!")]), React.createElement("div", { id: "child" }, [React.createElement("h1", {}, "I'm a h1 tag"), React.createElement("h2", {}, "I'm a h2 tag")])]);
+// JSX (transpiled before it reaches the JS) - Parcel - Babel
+// JSX => Babel transpiles it to React.createElement => React.createElement - JS Object => HTMLElement(render)
 
+const Title = () => <h1 className="head" tabIndex="5">Namaste React using JSX🚀</h1>;
+
+const Name = () => {
+    return (
+        <h1>Hello My Name is Alan Panicker</h1>
+    )
+}
+
+//React Functional Component
+// const HeadingComponent = () => {
+//     return <h1 className="heading">Namaste React Functional Component</h1>
+// }
+
+//other way of writing functional component
+//Component Composition
+const HeadingComponent2 = () => (
+    <div id="container">
+        <Title />
+        <h1 className="heading">Namaste React Functional Component 2</h1>
+    </div>
+)
+
+const Learner = () => (
+    <div>
+        {/* <Name /> */}
+        {Name()}
+        <h1>I am Learing React from Akshay Saini 🚀</h1>
+    </div>
+)
+
+// const heading = React.createElement("h1", { id: "heading" }, "This is Namaste React! 🚀");
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<Learner />);
